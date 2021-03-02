@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <title>DashBoard</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dokdo|Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="LandingPage.css">
+</head>
+<body>
+<nav class="navbar navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="LandingPage"><i class="fas fa-database"></i> Group 29</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="register">Sign Up <i class="fas fa-user-plus"></i></a></li>
+        <li><a href="ulogin">Log in <i class="fas fa-user"></i></a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div>
+<div class="container">
+    <div class="rows">
+        <div class="col-lg-4">
+    </div>
+
+        <div class="col-lg-4">
+
+            <div class="card">
+                
+             <table border="1" style="width:300px">
+    <tr>
+        <td>Status Type</td>
+        <td>Orders</td>
+    </tr>
+    <tr th:each="order : ${orderstatus}">
+        <td th:text="${order.status}">
+        </td>
+         <td th:text="${order.orders}">
+         </td>
+    </tr>
+  
+</table>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+        </div>
+    </div>
+
+
+
+</div>
+<div class="container">
+    <div class="rows">
+        <div class="col-lg-4">
+    </div>
+
+        <div class="col-lg-4">
+
+            <div class="card">
+                
+             <table border="1" style="width:300px">
+   
+<tr>
+        <td>Number of Orders</td>
+       <td th:text="${noorder}"></td>
+    </tr>
+    <tr>
+        <td>Repeat Rate</td>
+       <td th:text="${repeatrate}"></td>
+    </tr>
+   
+  
+</table>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+        </div>
+    </div>
+
+
+
+</div>
+    
+</div>
+
+<div>
+
+</div>
+  <!--   <ul th:each="continet : ${orderstatus}">
+    <li th:text="${continet.status}"+"  "+></li> -->
+</body>
+</html>
+
+
+
+<!-- <body>
+
+<nav class="navbar navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    Brand and toggle get grouped for better mobile display
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="LandingPage"><i class="fas fa-database"></i> Group 29</a>
+    </div>
+
+    Collect the nav links, forms, and other content for toggling
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="register">Sign Up <i class="fas fa-user-plus"></i></a></li>
+        <li><a href="ulogin">Log in <i class="fas fa-user"></i></a></li>
+      </ul>
+    </div>/.navbar-collapse
+  </div>/.container-fluid
+</nav>
+
+
+
+<div class="container">
+    <div class="rows">
+        <div class="col-lg-4">
+    </div>
+
+        <div class="col-lg-4">
+
+            <div class="card">
+                <h3>Welcome to </h3>
+                <h3>E-Commerce Data Analysis</h3>
+                <div class="line">
+                    <hr>
+                </div>
+                <form action="/ulogin" method="post">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Username" name="username">
+                    </div>
+                    <div class="form-group">
+                       <input type="password" class="form-control" placeholder="Password" name="password">
+                    </div>
+                <input class="btn btn-success btn-lg active btn-block" type="submit" value="Log in" />
+                <div></div>
+                <p></p>
+                <p>Not a member? <span><a href="register">Sign Up Now!</a></span></p>
+                </form>
+
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html> -->

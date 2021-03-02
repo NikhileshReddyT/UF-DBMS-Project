@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+	<title>Delivery Time Analysis</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="DeliveryTimeAnalysis.js"></script>
+
+    <style>
+
+      body {
+        background-color: #f4f6f9;
+      }
+
+      #table_div {
+        margin: 2%;
+        width: 90%;
+        
+      }
+
+      #lineChart_div {
+        margin: 2%;
+        width: 90%;
+        margin-left: 5%;
+      }
+
+      h1 {
+        text-align: center;
+        font-weight: bold;
+        margin-top: 5%;
+      }
+
+    </style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><i class="fas fa-database"></i> Group 29</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="MainPage">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="LandingPage">Sign out <i class="fas fa-sign-out-alt"></i></a></li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<tr th:each="SellerDelay : ${sellerDelay}">
+  <script type="text/javascript" th:inline="javascript">
+    /*<![CDATA[*/
+      SellersDelay_Id[countSellerDelay] = [[${SellerDelay.sellerId}]];
+      SellersDelay_para[countSellerDelay] = [[${SellerDelay.para}]];
+      SellersDelay_delayCount[countSellerDelay] = [[${SellerDelay.delayCount}]];
+      SelersDelay_delayTime[countSellerDelay] = [[${SellerDelay.delayTime}]];
+      countSellerDelay++;
+    /*]]>*/
+  </script>
+</tr>
+
+<tr th:each="ProductDelayPercentage : ${productDelayPercentage}">
+  <script type="text/javascript" th:inline="javascript">
+    /*<![CDATA[*/
+      ProductDelay_year[countProductDelay] = [[${ProductDelayPercentage.year}]];
+      ProductDelay_month[countProductDelay] = [[${ProductDelayPercentage.month}]];
+      ProductDelay_percentage[countProductDelay] = [[${ProductDelayPercentage.delayPercentage}]];
+      countProductDelay++;
+    /*]]>*/
+  </script>
+</tr>
+
+<div class="container">
+<div class='jumbotron'>
+      <h1><i class="fas fa-database"></i> Order Delivery Delay Analysis </h1>
+      </div>
+  
+    <div class="rows">
+      <div class="col-lg-12 col-md-12">
+        <div class="title">
+          <b><h1 align="center">Top 10 Worst Seller</h1></b>
+        </div>
+        <div id="table_div"></div>
+      </div>
+    </div>
+
+    <div class="rows">
+      <div class="col-lg-12 col-md-12">
+        <div class="title">
+          <b><h1 align="center">Delivery Delay Data</h1></b>
+        </div>
+        <div id="lineChart_div"></div>
+      </div>
+    </div>
+
+    <div class="rows">
+      <div class="col-lg-3 col-md-3"></div>
+      <div class="col-lg-6 col-md-6">
+        <div class="title">
+          <b><h1 align="center">Delay Order Distribution</h1></b>
+        </div>
+        <div class="thumbnail">
+          <a href="DeliveryDelayMap"><img src="mapImage.jpg" alt="Delaty Oderder Distribution Map">
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3"></div>
+    </div>
+</div> 
+
+      
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

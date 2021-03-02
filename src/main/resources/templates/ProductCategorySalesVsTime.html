@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title> Line Graph</title>
+		<link rel="stylesheet" type="text/css" href="MainPage.css">
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  		<script type="text/javascript" src="CategorywiseSales.js"></script>
+  		<script type="text/javascript" src="PdtCategorySalesMonthwise.js"></script>
+  		
+	</head>
+	<body>
+	
+	<tr th:each="Entry : ${CategorywiseSalesTrend}">
+  			<script type="text/javascript" th:inline="javascript">
+	    		/*<![CDATA[*/
+	      		sales3[count3] = [[${Entry.Sales}]];
+	      		Category3[count3] = [[${Entry.Category}]];
+	      		count3++;
+	    		/*]]>*/
+  			</script>
+		</tr>
+		
+		
+		
+		
+		<tr th:each="Entry : ${PdtCategorySalesVsMonth}">
+  			<script type="text/javascript" th:inline="javascript">
+	    		/*<![CDATA[*/
+	      		sales4[count4] = [[${Entry.Sales}]];
+	      		Category4[count4] = [[${Entry.Category}]];
+	      		years4[count4] = [[${Entry.Year}]];
+	      		months4[count4] = [[${Entry.Month}]];
+	      		eachentry[count4] = [[${PdtCategorySalesVsMonth}]];
+	      		count4++;
+	    		/*]]>*/
+  			</script>
+		</tr> 
+		
+	
+	  <div id="CategorywiseProductSales_chart_div1"></div>
+	  
+	  <div id="PdtCategorySalesMonthwise_chart_div1"></div>
+	  
+	  
+	</body>
+</html>

@@ -1,0 +1,71 @@
+body {
+	/*background:url(https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1602&q=80);*/
+	background:url(landingPageBackground.jpeg);
+	background-size: cover;
+	background-position: center;
+	color:white;
+}
+
+html {
+	height:100%;
+}
+
+.jumbotron {
+	margin-top: 20%;
+	background: rgba(255,255,255,0.15);
+	background-position: center;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+				 0px 8px 13px rgba(0,0,0,0.1),
+				 0px 18px 23px rgba(0,0,0,0.1);
+}
+
+#content {
+	text-align:center;
+	text-shadow:0px 4px 23px rgba(0,0,0,0.6),
+				0px 8px 23px rgba(0,0,0,0.4),
+				0px 18px 23px rgba(0,0,0,0.4);
+}
+
+.form-group {
+	border-radius: 50px 50px;
+}
+
+.card
+{
+    margin-top:40%;
+    padding:10%;
+    padding-top:3%;
+
+    text-align:center;
+    background-color:rgba(245,245,245,.9);
+    color: rgb(0,0,0);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.6), 
+    			0 5px 5px 0 rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 5em;
+}
+
+hr {
+	width:550px;
+	border-top: 1px solid #f8f8f8;
+	border-bottom: 1px solic rgba(0,0,0,0.2);
+}
+
+.line hr {
+	width:300px;
+	border-top:1px solid #f8f8f8;
+	border-bottom:1px solid rgba(0,0,0,0.2);
+}
+
+#roundCorner {
+	border-radius:75px;
+	height: 45px;
+}
+
+.header {
+	font-family: 'Raleway', sans-serif;
+}
+

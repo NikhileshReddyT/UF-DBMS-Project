@@ -1,0 +1,21 @@
+#category {
+	text-align: center;
+	font-size: 30px;
+	color: #000000;
+}
+
+.jumbotron {
+	margin-top: 5%;
+	background-color: #eee;
+	color:#000000;
+}
+
+.dashboard {
+	margin-top: 5%;
+	margin-bottom: 5%;
+	background-color: #373737;
+}
+
+body {
+	color: #fff;
+}

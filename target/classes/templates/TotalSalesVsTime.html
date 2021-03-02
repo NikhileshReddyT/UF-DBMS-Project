@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title> Bar Graph</title>
+		<link rel="stylesheet" type="text/css" href="MainPage.css">
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  		<script type="text/javascript" src="TotalSalesVsTime.js"></script>
+  		<script type="text/javascript" src="TotalSalesVsMonth.js"></script>
+  		<tr th:each="Entry : ${SalesYearWise}">
+  			<script type="text/javascript" th:inline="javascript">
+	    		/*<![CDATA[*/
+	      		sales1[count1] = [[${Entry.Sales}]];
+	      		years1[count1] = [[${Entry.Year}]];
+	      		count1++;
+	    		/*]]>*/
+  			</script>
+		</tr>
+		<tr th:each="Entry : ${SalesMonthWise}">
+  			<script type="text/javascript" th:inline="javascript">
+	    		/*<![CDATA[*/
+	      		sales2[count2] = [[${Entry.Monthwise_Sales}]];
+	      		years2[count2] = [[${Entry.Years}]];
+	      		months2[count2] = [[${Entry.Months}]];
+	      		count2++;
+	    		/*]]>*/
+  			</script>
+		</tr>
+	</head>
+	<body>
+
+<!-- <div class="container">
+
+	<div class="jumbotron">
+		<h1><i class="fas fa-database"></i></span> Analysis of E-Commerce Data</h1>
+		<p>Analyzing data from multiple dimensions </p>
+		<p>Brazilian largest market palces - Olist</p>
+	</div>
+</div> -->
+	  <div id="TotalSalesYearwiseTime_chart_div"></div>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <div id="TotalSalesMonthwiseTime_chart_div"></div>
+	</body>
+</html>
